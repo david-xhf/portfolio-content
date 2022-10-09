@@ -1,0 +1,44 @@
+nav {
+    background-color: #fff;
+    overflow: hidden;
+}
+
+nav a {
+    float: right;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    color: #000;
+}
+
+nav a:hover {
+    background-color: lightgreen;
+    color: black;
+    font-weight: bold;
+}
+
+#simply {
+    width: 100vw;
+}
+
+.container {
+    display: grid;
+    grid-template: repeat(3, 180px) /repeat(3, 300px);
+    grid-gap: 10 px;
+    align-items: center;
+    justify-items: center;
+}
+
+.container img:hover {
+    transform: scale(1.1);
+    transition-duration: 300ms;
+}
+
+#me {
+    width: 500px
+}
+
+#bg {
+    width: 100vw;
+}
