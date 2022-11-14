@@ -1,10 +1,53 @@
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template: 100px 1fr 100px / 10vw 1fr 10vw;
+}
+
+header {
+    grid-area: 1 / 1 / span 1 / span 3;
+}
+
+aside {
+    grid-area: 2 / 1 / span 1 / span 1;
+}
+
+main {
+    grid-area: 2 / 2 / span 1 / span 1;
+}
+
+footer {
+    grid-area: 3 / 1 / span 1 / span 3;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5px;
+}
+
+figcaption {
+    color: rgb(77, 77, 77)
+}
+
+h1 {
+    font-size: 30px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
 nav {
     background-color: #fff;
     overflow: hidden;
 }
 
 nav a {
-    float: right;
+    float: left;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -18,27 +61,130 @@ nav a:hover {
     font-weight: bold;
 }
 
-#simply {
-    width: 100vw;
+nav a.active {
+    background-color: lightgreen;
+    color: black;
+    font-weight: bold;
 }
 
-.container {
-    display: grid;
-    grid-template: repeat(3, 180px) /repeat(3, 300px);
-    grid-gap: 10 px;
-    align-items: center;
-    justify-items: center;
+.gallery {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.container img:hover {
-    transform: scale(1.1);
-    transition-duration: 300ms;
+
+.gallery img {
+    width: 20vw;
+}
+
+.gallery img:hover {
+    animation-name: gallery-animation;
+    animation-duration: 600ms;
+}
+
+@keyframes gallery-animation {
+    0% {
+        transform: scale(1.0);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1.0);
+    }
+}
+
+.flex-about {
+    display: flex;
+    /* align-items: center; */
 }
 
 #me {
-    width: 500px
+    width: 40%;
+    height: 40%;
+    padding: 40px;
+    min-width: 400px;
 }
 
-#bg {
-    width: 100vw;
+#wrapper {
+    padding: 40px;
+}
+
+#wrapper p {
+    font-size: 22px;
+    margin: 10px;
+    line-height: 25px;
+}
+
+footer p {
+    line-height: 23px;
+    color: #999;
+    text-align: center;
+}
+
+#simply {
+    width: 80vw;
+    margin-bottom: 40px;
+}
+
+span {
+    font-weight: 600;
+}
+
+@media all and (max-width: 700px) {
+    body {
+        display: grid;
+        grid-template: 100px 10px 1fr 100px / 1fr;
+    }
+
+    #simply {
+        width: 90vw;
+        margin-left: 0vw;
+    }
+
+    header {
+        grid-row: 1 / span 1;
+    }
+
+    main {
+        grid-area: 3 / span 1;
+    }
+
+    aside {
+        grid-area: 2 / span 1;
+    }
+
+    footer {
+        grid-area: 4 / span 1;
+    }
+
+    .flex-about {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .gallery {
+        flex-direction: column;
+        align-content: center;
+    }
+
+    .gallery img {
+        width: 80vw;
+    }
+
+    .flex-about {
+        align-items: center;
+    }
+}
+
+@media (prefers-reduced-motion) {
+    .gallery img:hover {
+        animation: none;
+    }
+
 }
