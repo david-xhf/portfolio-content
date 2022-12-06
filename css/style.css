@@ -23,6 +23,43 @@ footer {
     grid-area: 3 / 1 / span 1 / span 3;
 }
 
+.active {
+    text-decoration: underline;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    padding-top: 0px;
+}
+
+.skip a {
+    background: white;
+    left: 0;
+    padding: 6px;
+    -webkit-transition: top 1s ease-out;
+    transition: top 1s ease-out;
+    z-index: 1;
+    /*Your code here - position relative to the parent */
+    /*Your code here - place 500px left and 40px higher */
+    position: absolute;
+    left: -500px;
+    top: -40px;
+}
+
+.skip a:focus {
+    background: white;
+    top: 0;
+    left: 0;
+    padding: 6px;
+    -webkit-transition: top 1s ease-out;
+    transition: top 1s ease-out;
+    z-index: 1;
+    position: absolute;
+}
+
 figure {
     display: flex;
     flex-direction: column;
@@ -49,10 +86,17 @@ nav {
 nav a {
     float: left;
     text-align: center;
-    padding: 14px 16px;
+
     text-decoration: none;
     font-size: 17px;
     color: #000;
+}
+
+.flex-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 nav a:hover {
@@ -68,16 +112,14 @@ nav a.active {
 }
 
 .gallery {
-    margin-top: 20px;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    flex-direction: column;
+    align-content: center;
 }
 
-
 .gallery img {
-    width: 20vw;
+    display: flex;
+    width: 80vw;
 }
 
 .gallery img:hover {
@@ -101,7 +143,7 @@ nav a.active {
 
 .flex-about {
     display: flex;
-    /* align-items: center; */
+    flex-direction: column;
 }
 
 #me {
@@ -123,7 +165,7 @@ nav a.active {
 
 footer p {
     line-height: 23px;
-    color: #999;
+    color: #4d4d4d;
     text-align: center;
 }
 
@@ -136,15 +178,27 @@ span {
     font-weight: 600;
 }
 
-@media all and (max-width: 700px) {
+.nav_links {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+@media all and (min-width: 480px) {
+    nav a {
+        padding: 4px 16px;
+    }
+
     body {
         display: grid;
         grid-template: 100px 10px 1fr 100px / 1fr;
     }
 
     #simply {
-        width: 90vw;
-        margin-left: 0vw;
+        width: 80vw;
+        margin-left: 10vw;
+        margin-right: 10vw;
     }
 
     header {
@@ -164,21 +218,41 @@ span {
     }
 
     .flex-about {
-        display: flex;
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .gallery {
-        flex-direction: column;
-        align-content: center;
+        margin-top: 20px;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
     }
 
     .gallery img {
-        width: 80vw;
+        width: 40vw;
     }
 
     .flex-about {
-        align-items: center;
+        align-items: flex-start;
+    }
+}
+
+@media all and (min-width: 1024px) {
+    nav a {
+        padding: 14px 16px;
+    }
+
+    .gallery img {
+        width: 20vw;
+    }
+
+    .flex-about {
+        align-items: flex-start;
+    }
+
+    .nav_links {
+        display: block;
     }
 }
 
@@ -186,5 +260,4 @@ span {
     .gallery img:hover {
         animation: none;
     }
-
 }

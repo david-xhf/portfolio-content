@@ -2,6 +2,49 @@ html {
     font-family: 'Poppins', sans-serif;
 }
 
+.skip a {
+    background: white;
+    left: 0;
+    padding: 6px;
+    -webkit-transition: top 1s ease-out;
+    transition: top 1s ease-out;
+    z-index: 1;
+    /*Your code here - position relative to the parent */
+    /*Your code here - place 500px left and 40px higher */
+    position: absolute;
+    left: -500px;
+    top: -40px;
+}
+
+#title {
+    font-weight: 600;
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+#parag {
+    color: #4d4d4d;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    width: 60%;
+    align-self: center;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.skip a:focus {
+    background: white;
+    top: 0;
+    left: 0;
+    padding: 6px;
+    -webkit-transition: top 1s ease-out;
+    transition: top 1s ease-out;
+    z-index: 1;
+    position: absolute;
+}
+
 .bg-wrapper {
     position: relative;
     height: 100vh;
@@ -27,7 +70,7 @@ html {
     border-radius: 100px;
     color: #ffffff;
     font-family: arial;
-    font-size: 20px;
+    font-size: 15px;
     font-style: normal;
     font-weight: bold;
     line-height: 40px;
@@ -41,7 +84,7 @@ html {
     cursor: pointer;
     display: inline-flex;
     margin: 0 auto;
-    padding: 5px 50px;
+    padding: 5px 30px;
     max-width: 100%;
     overflow: hidden;
     white-space: nowrap;
@@ -55,4 +98,42 @@ html {
     text-decoration: none;
     text-transform: none;
     background-color: rgba(34, 34, 34, 0.75);
+}
+
+@media (min-width: 480px) {
+    #title {
+        font-size: 50px;
+    }
+
+    #parag {
+        font-size: 20px;
+        line-height: 35px;
+    }
+
+    .button {
+        font-size: 20px;
+        line-height: 40px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #title {
+        font-size: 75px;
+    }
+
+    #parag {
+        font-size: 25px;
+        line-height: 25px;
+    }
+
+    .button {
+        font-size: 20px;
+        line-height: 40px;
+    }
+}
+
+@media (prefers-reduced-motion) {
+    html {
+        animation: none;
+    }
 }
