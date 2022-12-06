@@ -6,13 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.jpeg">
     <link rel="stylesheet" href="css/html5reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRR61F2N2K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-KRR61F2N2K');
+    </script>
 </head>
 
 <body>
+    <div class="skip"><a href="#main">Skip to Main Content</a></div>
     <header>
-        <nav>
+        <nav class="nav_links">
             <a href="index.html">Home</a>
             <a href="project.html">Project</a>
             <a href="gallery.html">Gallery</a>
@@ -20,10 +31,28 @@
         </nav>
     </header>
     <aside></aside>
-    <main>
+    <main id="main">
         <h1>About</h1>
         <div class="flex-about">
-            <img id="me" src="images/haofei.jpeg" alt="Haofei's Photo">
+            <div class="flex-left">
+                <img id="me" src="images/haofei.jpeg" alt="Haofei's Photo">
+                <form id="contact" action="https://formspree.io/f/xyyvblek" method="POST">
+                    <p style="font-weight: bold; text-align: center; margin-bottom: 10px;">Contact Me</p>
+                    <label style="display: block;">
+                        Your name:
+                        <input type="text" name="name">
+                    </label>
+                    <label style="display: block">
+                        Your email:
+                        <input type="email" name="email">
+                    </label>
+                    <label style="display: block">
+                        Your message:
+                        <input name="message"></textarea>
+                    </label>
+                    <button type="submit" style="margin-top: 10px;">Send</button>
+                </form>
+            </div>
             <div id="wrapper">
                 <p>From humans, concerning humans, and for humans, studying Psychology during the last four years
                     enables me to empathize with everyone around me. </p>
